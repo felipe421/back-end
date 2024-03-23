@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var maioresIdade = 0;
+        var menoresIdade = 0;
+
+        for (var i = 0; i < 10; i++) {
+            var idade = prompt("Digite a idade da pessoa " + (i + 1) + ":");
+
+
+            if (idade !== null && idade !== "" && !isNaN(idade)) {
+                idade = parseInt(idade);
+                if (idade >= 18) {
+                    maioresIdade++;
+                } else {
+                    menoresIdade++;
+                }
+            } else {
+                alert("Por favor, digite uma idade válida.");
+                i--;
+            }
+        }
+
+        // Exibir o resultado
+        alert("Total de pessoas maiores de idade: " + maioresIdade + "\nTotal de pessoas menores de idade: " + menoresIdade);
+    </script>
+</body>
+
+</html>

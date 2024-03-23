@@ -4,11 +4,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const teste_lista = require('./route/teste_lista')
-const introducao = require('./route/introducao')
-
-app.use('/teste_lista', teste_lista)
-app.use('/', introducao)
+const routes = require('./route/routes')
+app.use('/', routes)
 
 app.listen('3000', function () {
     console.log('executou');

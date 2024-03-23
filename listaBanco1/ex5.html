@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Aluno {
+            constructor(nome, idade, peso) {
+                this.nome = nome;
+                this.idade = idade;
+                this.peso = peso;
+            }
+        }
+
+        const meuAluno = new Aluno("Seu Nome", 20, 70.5);
+
+        meuAluno.nome = "Novo Nome";
+        meuAluno.idade = 25;
+        meuAluno.peso = 75.3;
+
+        console.log("Nome:", meuAluno.nome);
+        console.log("Idade:", meuAluno.idade);
+        console.log("Peso:", meuAluno.peso);
+    </script>
+</body>
+
+</html>
