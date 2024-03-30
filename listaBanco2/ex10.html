@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+
+<body>
+    <script>
+        class Pilha {
+            constructor() {
+                this.itens = [];
+            }
+
+            empilhar(elemento) {
+                this.itens.push(elemento);
+            }
+
+            desempilhar() {
+                if (this.estaVazia()) {
+                    return null;
+                }
+                return this.itens.pop();
+            }
+
+            estaVazia() {
+                return this.itens.length === 0;
+            }
+        }
+
+        function programa() {
+            let pilhaPar = new Pilha();
+            let pilhaImpar = new Pilha();
+
+            for (let i = 0; i < 10; i++) {
+                let numero = parseInt(prompt("Digite um número:"));
+
+                if (numero % 2 === 0) {
+                    pilhaPar.empilhar(numero);
+                } else {
+                    pilhaImpar.empilhar(numero);
+                }
+
+                if (numero === 0) {
+                    let desempilhadoPar = pilhaPar.desempilhar();
+                    let desempilhadoImpar = pilhaImpar.desempilhar();
+
+                    if (desempilhadoPar === null || desempilhadoImpar === null) {
+                        console.log("Erro: Alguma das pilhas está vazia ao desempilhar.");
+                    } else {
+                        console.log("Desempilhado da pilha par:", desempilhadoPar);
+                        console.log("Desempilhado da pilha ímpar:", desempilhadoImpar);
+                    }
+                }
+            }
+
+            console.log("Elementos restantes na pilha par:");
+            while (!pilhaPar.estaVazia()) {
+                console.log(pilhaPar.desempilhar());
+            }
+
+            console.log("Elementos restantes na pilha ímpar:");
+            while (!pilhaImpar.estaVazia()) {
+                console.log(pilhaImpar.desempilhar());
+            }
+        }
+
+        programa();
+
+    </script>
+</body>
+
+</html>

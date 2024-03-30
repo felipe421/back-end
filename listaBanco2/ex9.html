@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+
+<body>
+    <script>
+        class Pilha {
+            constructor() {
+                this.itens = [];
+            }
+
+            empilhar(elemento) {
+                this.itens.push(elemento);
+            }
+
+            desempilhar() {
+                if (this.estaVazia()) {
+                    return null;
+                }
+                return this.itens.pop();
+            }
+
+            estaVazia() {
+                return this.itens.length === 0;
+            }
+        }
+
+
+        function ehPar(numero) {
+            return numero % 2 === 0;
+        }
+
+
+        function programa() {
+            let pilha = new Pilha();
+
+            for (let i = 0; i < 10; i++) {
+                let numero = parseInt(prompt("Digite um número:"));
+
+                if (ehPar(numero)) {
+                    pilha.empilhar(numero);
+                } else {
+                    let desempilhado = pilha.desempilhar();
+                    if (desempilhado === null) {
+                        console.log("A pilha está vazia.");
+                    } else {
+                        console.log("Desempilhado:", desempilhado);
+                    }
+                }
+            }
+
+
+            while (!pilha.estaVazia()) {
+                console.log("Desempilhado:", pilha.desempilhar());
+            }
+        }
+
+        programa();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+
+<body>
+    <script>
+        function decimalParaHexadecimal(decimal) {
+            if (isNaN(decimal)) {
+                return "Por favor, forneça um número válido.";
+            }
+
+            let hexadecimal = decimal.toString(16);
+            return hexadecimal.toUpperCase(); 
+        }
+
+        let numeroDecimal = 255;
+        console.log("Número decimal:", numeroDecimal);
+        console.log("Número hexadecimal:", decimalParaHexadecimal(numeroDecimal));
+
+    </script>
+</body>
+
+</html>

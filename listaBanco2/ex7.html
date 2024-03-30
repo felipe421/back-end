@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7</title>
+</head>
+
+<body>
+    <script>
+        function preencherMatriz(linhas, colunas) {
+            let matriz = [];
+            let contador = 1;
+            for (let i = 0; i < linhas; i++) {
+                matriz[i] = [];
+                for (let j = 0; j < colunas; j++) {
+                    matriz[i][j] = contador;
+                    contador++;
+                }
+            }
+            return matriz;
+        }
+
+        let linhas, colunas;
+        do {
+            linhas = parseInt(prompt("Digite a quantidade de linhas da matriz:"));
+        } while (isNaN(linhas) || linhas <= 0);
+
+        do {
+            colunas = parseInt(prompt("Digite a quantidade de colunas da matriz:"));
+        } while (isNaN(colunas) || colunas <= 0);
+
+        let matriz = preencherMatriz(linhas, colunas);
+
+        console.log("Matriz preenchida:");
+        for (let i = 0; i < linhas; i++) {
+            console.log(matriz[i].join("\t"));
+        }
+
+    </script>
+</body>
+
+</html>

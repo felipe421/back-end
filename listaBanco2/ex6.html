@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularFatorial(n) {
+            if (n === 0) {
+                return 1;
+            }
+            let fatorial = 1;
+            for (let i = 1; i <= n; i++) {
+                fatorial *= i;
+            }
+            return fatorial;
+        }
+
+        let n;
+        do {
+            n = parseInt(prompt("Digite um inteiro positivo para calcular os fatoriais:"));
+        } while (isNaN(n) || n < 0);
+
+        let fatoriais = [];
+        for (let i = 0; i <= n; i++) {
+            fatoriais.push(i === 0 ? `${i}! = 1` : `${i}! = ${i} x ${fatoriais[i - 1]} = ${calcularFatorial(i)}`);
+        }
+
+
+        console.log("Fatoriais até", n, ":");
+        console.log(fatoriais.join("\n"));
+
+    </script>
+</body>
+
+</html>

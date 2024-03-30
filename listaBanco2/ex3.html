@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+
+<body>
+    <script>
+
+        let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+        let numero2 = parseFloat(prompt("Digite o segundo número:"));
+        let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+        let numeros = [numero1, numero2, numero3];
+
+        console.log("Array original:", numeros);
+
+        let tamanho = numeros.length;
+        for (let i = 0; i < Math.floor(tamanho / 2); i++) {
+            let temp = numeros[i];
+            numeros[i] = numeros[tamanho - 1 - i];
+            numeros[tamanho - 1 - i] = temp;
+        }
+
+        console.log("Array com a sequência invertida:", numeros);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body>
+    <script>
+        function ordenarEmOrdemCrescente(array) {
+            if (array[0] > array[1]) {
+                let temp = array[0];
+                array[0] = array[1];
+                array[1] = temp;
+            }
+            return array;
+        }
+
+        let numeros = [5, 2];
+        console.log("Array original:", numeros);
+        console.log("Array em ordem crescente:", ordenarEmOrdemCrescente(numeros))
+    </script>
+</body>
+
+</html>
